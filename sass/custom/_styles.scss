@@ -1,9 +1,19 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-//@import "custom/coderay";
-img {
+/*img {
 	width:100%;
 	height:100%;
 	object-fit: contain;
+}*/
+
+//@import "custom/coderay";
+
+header[role="banner"] {
+ background-image: url(/images/banner.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ object-fit: contain;
+ padding-top: 10%;
+ padding-bottom: 10%;
 }

@@ -84,8 +84,17 @@ body {
   }
   > header {
     font-size: $header-font-size;
+    font-weight: bolder;
     padding-top: $header-padding-top;
     padding-bottom: $header-padding-bottom;
+    color: white;
+    text-align: center;
+    text-shadow:
+    	3px 3px 0 #000,
+     	-1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
 }
 
