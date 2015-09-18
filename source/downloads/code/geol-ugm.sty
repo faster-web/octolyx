@@ -1,0 +1,378 @@
+%% This is file `geol-ugm.sty',
+%%
+%% This package provides a standard typesetting for Skripsi and/or Referat
+%% It combines a huge LaTeX packages which are found in CTAN  by otimizing 
+%% the environment which is suitable for Indonesian Skripsi or Referat. 
+%% Please download and install the packages if you have an error by  using
+%% this package.
+%%
+%% This package need to install the important package, such as:  titlesec,
+%% natbib, dcolumn, and textcase. If you don't have those packages  please
+%% find at CTAN.
+%%
+%% LyX/LaTeX usage:
+%% add \usepackage[option]{geol-ugm} in preamble of selected book / report
+%%                                   class. Others class probably make  an
+%%                                   unpredictable error.
+%% 
+%% A possible option could be: onesup or twosup (supervisor/pembimbing)
+%% Example: if you have one supervisor, you should put in preamble:
+%%
+%+--------------------------------------+
+%| \usepackage[twosup]{geol-ugm}        |
+%| \pubtype{Skripsi}                    |
+%| \degree{Sarjana (Strata-1)}          |
+%| \department{Jurusan Teknik Geologi}  |
+%| \faculty{Fakultas Teknik}            |
+%| \university{Universitas Gadjah Mada} |
+%| \authortext{Penyusun}                |
+%| \idnum{87/13678/TK/15057}            |
+%| \city{Yogyakarta}                    |
+%| \supervisor{Shakuntala}              |
+%| \idsup{134 222 333}                  |
+%| \cosupervisor{Rani Mukherjee}        |
+%| \idcos{134 256 378}                  |
+%+--------------------------------------+
+%%
+%% Copyright 2005 I Wayan Warmada
+%%
+%% Author: I Wayan Warmada
+%%         <warmada@mail.ugm.ac.id>
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{geol-ugm}[2005/05/22 v0.14 maketitle typesetting]
+%
+\RequirePackage[small,calcwidth]{titlesec}
+\RequirePackage[scaled=.85]{helvet}
+\RequirePackage[small,bf]{caption2}
+\RequirePackage{setspace,textcase}
+\RequirePackage[unicode]{hyperref}
+\RequirePackage{mathptmx,courier}
+\RequirePackage{eso-pic,graphicx}
+\RequirePackage[none]{hyphenat}
+\RequirePackage{dcolumn,ifthen}
+%
+\newif\if@onesup
+\if@compatibility\else
+\DeclareOption{onesup}{\@onesuptrue}
+\fi
+\DeclareOption{twosup}{\@onesupfalse}
+\ProcessOptions
+%
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newcommand{\TRule}{\rule{\linewidth}{1.2mm}\\[-1.05em]
+                    \rule{\linewidth}{.5pt}}
+\newcommand{\BRule}{\rule{\linewidth}{.5pt}\\[-.8em]
+                    \rule{\linewidth}{1.2mm}}
+%
+\newcommand{\degree}[1]{\gdef\@degree{#1}}
+\newcommand{\pubtype}[1]{\gdef\@pubtype{#1}}
+\newcommand{\department}[1]{\gdef\@department{#1}}
+%\newcommand{\program}[1]{\gdef\@program{#1}}
+\newcommand{\faculty}[1]{\gdef\@faculty{#1}}
+\newcommand{\university}[1]{\gdef\@university{#1}}
+\newcommand{\authortext}[1]{\gdef\@authortext{#1}}
+\newcommand{\idnum}[1]{\gdef\@idnum{#1}}
+\newcommand{\suptext}[1]{\gdef\@suptext{#1}}
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand{\idsup}[1]{\gdef\@idsup{#1}}
+\newcommand{\cosupervisor}[1]{\gdef\@cosupervisor{#1}}
+\newcommand{\idcos}[1]{\gdef\@idcos{#1}}
+\newcommand{\city}[1]{\gdef\@city{#1}}
+%
+\newcommand{\bglogo}[1]{%
+  \setlength{\unitlength}{1pt}% default
+  \put(22,\strip@pt\paperheight){%
+    \parbox[t][\paperheight]{\paperwidth}{%       
+      \vfill
+        \centering\includegraphics[%
+        clip,
+        width=.5\textwidth]{#1}
+      \vfill
+    }}}
+%
+% sampul pertama ...
+% ------------------
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \singlespacing%
+    \null\vfil
+      \centering%
+%        {\large\bfseries \MakeUppercase{Departemen Pendidikan Nasional} \par}%
+          {\large\bfseries \MakeUppercase{\@university} \par}%
+          {\large\bfseries \MakeUppercase{\@faculty} \par}%
+          {\large\bfseries \MakeUppercase{\@department} \par}
+        \vskip 1em
+        \TRule %------------------------------------------
+        \vskip 1.75em
+        {\Large\bfseries \MakeUppercase{\textsf{\@title}} \par}%
+        \vspace*{\stretch{1}}
+        \parbox[c]{\textwidth}{%
+          \centering\includegraphics[%
+            clip,
+            width=.35\textwidth]{logofg}
+        }
+        \vspace*{\stretch{1}}\\
+        {\large\bfseries \MakeUppercase{\@pubtype} \par}%
+        \vskip 2.5em
+        {\large\bfseries Oleh}
+          \vskip 1.75em
+          \begin{tabular}{c}
+            {\large\bfseries \textsc{\@author}}\tabularnewline
+            \hline
+            \rule{0pt}{2.5ex}
+            {\large\bfseries \@idnum}\tabularnewline
+          \end{tabular}
+        \vskip 1.5em
+        \BRule %------------------------------------------
+        \vskip 1.15em
+        {\large\bfseries \MakeUppercase{\@city}} \\[.25em]
+          {\large\bfseries \@date \par}%
+      \par
+    \vfil\null%
+%
+% sampul kedua ...
+% ----------------
+    \newpage
+    \AddToShipoutPicture*{\bglogo{logobg}}
+    \null\vfil
+    \thispagestyle{empty}
+      \centering%
+        {\large\bfseries \MakeUppercase{Halaman Pengesahan} \par}
+        \vskip 3.5em
+        {\Large\bfseries \MakeUppercase{\textsf{\@title}} \par}%
+        \vspace*{\stretch{1}}
+        {\large\bfseries \MakeUppercase{\@pubtype} \par}
+        \vskip 2.5em
+        Diajukan untuk memenuhi salah satu syarat kurikulum tingkat \@degree\par
+        pada \@department, \@faculty, \@university \par
+        \vspace*{\stretch{1}}
+        \if@onesup
+          \begin{minipage}[c]{0.40\textwidth}%
+            \centering
+              \suptext{Pembimbing}
+              {\bfseries \@suptext \par}
+                \vskip 5em
+                \begin{tabular}{c}
+                  \textbf{\@supervisor}\tabularnewline
+                  \hline
+                  \rule{0pt}{2ex}
+                  \textbf{NIP \@idsup}\tabularnewline
+                \end{tabular}
+            \end{minipage}%
+          \hfill{}\begin{minipage}[c]{0.40\textwidth}%
+            \centering
+              {\bfseries \@authortext \par}
+                \vskip 5em
+                \begin{tabular}{c}
+                  \textbf{\@author}\tabularnewline
+                  \hline
+                  \rule{0pt}{2ex}
+                  \textbf{NIM \@idnum}\tabularnewline
+                \end{tabular}
+            \end{minipage}%
+        \else
+          \centering%
+          {\bfseries \@authortext \par}
+          \vskip 4em
+          \begin{tabular}{c}
+            \textbf{\@author}\tabularnewline
+            \hline
+            \rule{0pt}{2ex}
+            \textbf{NIM \@idnum}\tabularnewline
+          \end{tabular}
+          \vskip 2em
+          \begin{minipage}[c]{0.40\textwidth}%
+            \centering
+              \suptext{Pembimbing}
+              {\bfseries \@suptext{} I \par}
+                \vskip 4em
+                \begin{tabular}{c}
+                  \textbf{\@supervisor}\tabularnewline
+                  \hline
+                  \rule{0pt}{2ex}
+                  \textbf{NIP \@idsup}\tabularnewline
+                \end{tabular}
+            \end{minipage}%
+          \hfill{}\begin{minipage}[c]{0.40\textwidth}%
+            \centering
+              {\bfseries \@suptext{} II \par}
+                \vskip 4em
+                \begin{tabular}{c}
+                  \textbf{\@cosupervisor}\tabularnewline
+                  \hline
+                  \rule{0pt}{2ex}
+                  \textbf{NIP \@idcos}\tabularnewline
+                \end{tabular}
+          \end{minipage}%
+        \fi
+      \par
+    \vfil\null%
+  \end{titlepage}%
+  \global\let\degree\relax
+  \global\let\@degree\@empty
+  \global\let\pubtype\relax
+  \global\let\@pubtype\@empty
+  \global\let\department\relax
+  \global\let\@department\@empty
+  \global\let\program\relax
+  \global\let\@program\@empty
+  \global\let\faculty\relax
+  \global\let\@faculty\@empty
+  \global\let\university\relax
+  \global\let\@university\@empty
+  \global\let\authortext\relax
+  \global\let\@authortext\@empty
+  \global\let\idnum\relax
+  \global\let\@idnum\@empty  
+  \global\let\suptext\relax
+  \global\let\@suptext\@empty
+  \global\let\supervisor\relax
+  \global\let\@supervisor\@empty
+  \global\let\idsup\relax
+  \global\let\@idsup\@empty
+  \global\let\cosupervisor\relax
+  \global\let\@cosupervisor\@empty
+  \global\let\idcos\relax
+  \global\let\@idcos\@empty
+  \global\let\city\relax
+  \global\let\@city\@empty
+  \setcounter{page}{1}\pagenumbering{roman}%
+}
+%
+\if@titlepage
+  \renewenvironment{abstract}{%
+      \titlepage
+      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+        \Large\bfseries\textsf \abstractname
+        \@endparpenalty\@M
+      \end{center}}%
+     {\par\vfil\null\endtitlepage}
+\else
+  \renewenvironment{abstract}{%
+      \if@twocolumn
+        \section*{\abstractname}%
+      \else
+        \small
+        \begin{center}%
+          {\Large\bfseries\textsf \abstractname\vspace{-.5em}\vspace{\z@}}%
+        \end{center}%
+        \quotation
+      \fi}
+      {\if@twocolumn\else\endquotation\fi}
+\fi
+%
+\def\@makechapterhead#1{%
+\begin{center}
+  \vspace*{-10\p@}%
+  {\reset@font\Large\bfseries%
+    \MakeUppercase{\@chapapp\space \thechapter}\\%
+    \MakeUppercase{#1}%
+    \vskip 35\p@
+  }
+\end{center}
+}
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip .5em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+%      \@chapapp\space #1\nobreak\
+      #1\nobreak\
+        \leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfil\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi
+}
+%
+\def\@makeschapterhead#1{%
+  \begin{center}
+  \vspace*{-15\p@}%
+  {\reset@font\Large\bfseries%
+    \MakeUppercase{#1}%
+    \vskip 35\p@
+  }
+  \end{center}
+}
+%
+\newskip\beforetitleunit
+\beforetitleunit=1ex\@plus.3ex\@minus.06ex
+\newskip\aftertitleunit
+\aftertitleunit=1ex\@plus-.25ex
+%
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                                    {\beforetitleunit}
+                                    {\aftertitleunit}
+                                    {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                       {\beforetitleunit}
+                                       {\aftertitleunit}
+                                       {\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                          {\beforetitleunit}
+                                          {\aftertitleunit}
+                                          {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                      {3.25ex \@plus1ex \@minus.2ex}%
+                                      {-1em}%
+                                      {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                         {3.25ex \@plus1ex \@minus .2ex}%
+                                         {-1em}%
+                                         {\normalfont\normalsize\bfseries}}
+%
+\renewcommand\tableofcontents{%
+  \chapter*{\centerline{\contentsname
+    \@mkboth{\MakeUppercase\contentsname}%
+            {\MakeUppercase\contentsname}}}%
+  \vspace{-2.5em}%
+  \@starttoc{toc}%
+  }
+\renewcommand\listoffigures{%
+  \chapter*{\centerline{\listfigurename}%
+    \@mkboth{\MakeUppercase\listfigurename}%
+            {\MakeUppercase\listfigurename}}%
+  \vspace{-2.5em}%
+  \@starttoc{lof}%
+  }
+\renewcommand\listoftables{%
+  \chapter*{\centerline{\listtablename}%
+    \@mkboth{\MakeUppercase\listtablename}%
+            {\MakeUppercase\listtablename}}%
+  \vspace{-2.5em}%
+  \@starttoc{lot}%
+  }
+%
+\fancyhf{}
+\fancyhead[LO]{\nouppercase{\small\leftmark}}
+\fancyhead[RE]{\nouppercase{\small\rightmark}}
+\fancyhead[LE,RO]{\small\thepage}
+%
+\newcolumntype{,}{D{.}{,}{2}}
+\newcommand{\ts}{\rule{0pt}{2.5ex}}
+\newcommand{\bs}{\rule[-1.5ex]{0pt}{1.5ex}}
+\let\olditemize=\itemize
+  \def\itemize{\olditemize\setlength{\itemsep}{-0.5ex}}
+\let\oldenumerate=\enumerate
+  \def\enumerate{\oldenumerate\setlength{\itemsep}{-0.5ex}}
+%
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+\sloppy
+%
+% End of 'geol-ugm.sty'

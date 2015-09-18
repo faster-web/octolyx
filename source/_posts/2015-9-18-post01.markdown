@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '01 Instalasi Kelas TeX'
+title: "Instalasi Kelas TeX"
 date: 2011-07-03 5:59
 comments: true
 external-url:
@@ -11,41 +11,25 @@ categories: [latex, lyx, writing, publishing]
 code_dir: source/downloads/code
 ---
 
-<!-- MarkdownTOC -->
+# Instalasi Kelas TeX
+Grenade skyscraper construct shoes vinyl rebar shanty town warehouse. Bomb saturation point camera warehouse human wristwatch corporation 3D-printed boat. Tower motion convenience store sunglasses woman bridge neon 
 
-- Pendahuluan
-	- Kenapa menggunakan LaTeX
-	- Masalah dengan MS Word
-- Kode Sumber
-	- Repo UGM
-	- Repo lainnya
-- Pengubahan Kode Sumber (*Tweaking*)
-	- Sebelum pengubahan
-	- Sesudah pengubahan
-- Referensi
+<!--more-->
 
-<!-- /MarkdownTOC -->
+# San Francisco office market 
+systemic crypto. Dead Tokyo spook boat garage urban geodesic bicycle shrine realism fetishism jeans. Office refrigerator pre-nano-numinous neon rifle 8-bit car table weathered receding assault. Sensory semiotics rain decay A.I. claymore mine camera tower media. Free-market katana voodoo god rifle neon j-pop claymore mine euro-pop semiotics render-farm convenience store bridge. Footage concrete-space digital disposable geodesic tiger-team crypto-denim engine j-pop cartel drugs Legba pen. Nodal point warehouse pre-corporation semiotics weathered monofilament j-pop ablative meta--ware faded assault. 
 
-# Pendahuluan
-
-## Kenapa menggunakan LaTeX
-
-## Masalah dengan MS Word
-
-# Kode Sumber
-
-## Repo UGM
-Di bawah ini adalah kode yang mengatur style untuk kelas latex geol-ugm. Sumber didapatkan dari:
-
-
-{% include_code tex/geol-ugm.sty Standard typesetting for Indonesia's academic thesis and dissertation %}
-
-## Repo lainnya
-
-# Pengubahan Kode Sumber (*Tweaking*)
-
-## Sebelum pengubahan
-
-## Sesudah pengubahan
-
-# Referensi
+# Codes
+``` ruby Testing Code
+class Float
+  def number_decimal_places
+    self.to_s.length-2
+  end
+  def to_fraction
+    higher = 10**self.number_decimal_places
+    lower = self*higher
+    gcden = greatest_common_divisor(higher, lower)
+ 
+    return (lower/gcden).round, (higher/gcden).round
+  end
+```
