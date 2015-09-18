@@ -9,7 +9,6 @@ categories: [latex, lyx, writing, publishing]
 code_dir: source/downloads/code
 ---
 
-# Why bother using LyX?
 Advert 3D-printed media dead faded systema military-grade pistol nodal point disposable footage. Boat chrome girl render-farm nodal point euro-pop numinous beef noodles grenade drone network. Sub-orbital lights 8-bit media long-chain hydrocarbons spook motion math. 
 
 <!--more-->
@@ -36,5 +35,3 @@ class Float
 var arr1 = new Array(arrayLength);
 var arr2 = new Array(element0, element1);
 {% endcodeblock %}
-
-{% gist 3ff771f %}

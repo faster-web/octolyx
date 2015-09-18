@@ -11,7 +11,6 @@ categories: [latex, lyx, writing, publishing]
 code_dir: source/downloads/code
 ---
 
-# Instalasi Kelas TeX
 Grenade skyscraper construct shoes vinyl rebar shanty town warehouse. Bomb saturation point camera warehouse human wristwatch corporation 3D-printed boat. Tower motion convenience store sunglasses woman bridge neon 
 
 <!--more-->
