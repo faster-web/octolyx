@@ -1,13 +1,6 @@
-<table>
-	<tr>
-		<td>
-			<h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
-			{% if site.subtitle %}
-				<h2>{{ site.subtitle }}</h2>
-			{% endif %}
-		</td>
-		<td>
-			{% img left /images/banner.png 620 258'this is banner'  %}
-		</td>
-	</tr>
-</table>
+<hgroup>
+  <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+  {% if site.subtitle %}
+    <h2>{{ site.subtitle }}</h2>
+  {% endif %}
+</hgroup>
