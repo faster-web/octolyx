@@ -16,8 +16,12 @@ Advert 3D-printed media dead faded systema military-grade pistol nodal point dis
 # San Francisco office market 
 systemic crypto. Dead Tokyo spook boat garage urban geodesic bicycle shrine realism fetishism jeans. Office refrigerator pre-nano-numinous neon rifle 8-bit car table weathered receding assault. Sensory semiotics rain decay A.I. claymore mine camera tower media. Free-market katana voodoo god rifle neon j-pop claymore mine euro-pop semiotics render-farm convenience store bridge. Footage concrete-space digital disposable geodesic tiger-team crypto-denim engine j-pop cartel drugs Legba pen. Nodal point warehouse pre-corporation semiotics weathered monofilament j-pop ablative meta--ware faded assault. 
 
+![Logonya si gembul](/images/banner-mini.png)
+
+{% imgcap /images/banner-mini.png Ini logonya si gembul! %}
+
 # Codes
-``` ruby Nama file ini http://lol.com Klik Untuk Mengunduh
+``` ruby Nama file ini http://lol.com Unduh kodenya!
 class Float
   def number_decimal_places
     self.to_s.length-2

@@ -32,3 +32,4 @@ class Float
     return (lower/gcden).round, (higher/gcden).round
   end
 ```
+{% gist 1729496 include.txt %}
