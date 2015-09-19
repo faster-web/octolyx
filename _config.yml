@@ -7,7 +7,7 @@ title: Friendlyx
 subtitle: Friendly academic writing using LyX
 author: Gema Buj
 simple_search: https://www.google.com/search
-description:
+description: Writing thesis and dissertation using document processor such as latex or its front-end lyx. 
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -47,10 +47,10 @@ rdiscount:
     #coderay_css: class
 highlighter: pygments # default python pygments have been replaced by pygments.rb
 
-paginate: 10          # Posts per page on the blog index
+paginate: 2          # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
-excerpt_link: "Am I have your attention to read more &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+excerpt_link: "I'm curious. Go on! &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
 excerpt_separator: "<!--more-->"
 
 titlecase: true       # Converts page and post titles to titlecase
