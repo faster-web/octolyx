@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About"
+title: "Tentang Pembuat"
 date: 2015-09-19 02:06
 comments: true
 sharing: true

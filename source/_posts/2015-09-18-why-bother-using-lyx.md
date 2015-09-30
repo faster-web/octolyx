@@ -7,6 +7,7 @@ author: Gema Buj
 published: true
 categories: [latex, lyx, writing, publishing]
 code_dir: source/downloads/code
+published: false
 ---
 
 Advert 3D-printed media dead faded systema military-grade pistol nodal point disposable footage. Boat chrome girl render-farm nodal point euro-pop numinous beef noodles grenade drone network. Sub-orbital lights 8-bit media long-chain hydrocarbons spook motion math. 

@@ -3,6 +3,7 @@ layout: post
 title:  "Next Post"
 date:   2015-04-24 18:26:25
 categories: jekyll post
+published: false
 ---
 
 Ok. Here's my second post. Hmm. This time I'll trying to write about poems. Code is poetry, right? 

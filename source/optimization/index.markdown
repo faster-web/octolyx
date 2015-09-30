@@ -1,21 +1,35 @@
 ---
 layout: page
-title: "optimization"
+title: "Optimasi"
 date: 2015-09-19 03:03
 comments: true
 sharing: true
 footer: true
 ---
 
-Beef noodles render-farm tanto pre-Legba claymore mine saturation point denim into narrative military-grade hacker RAF nodality singularity. Ablative bicycle engine vehicle tanto smart-shoes assault shrine tattoo fetishism free-market alcohol convenience store franchise. 
+Octopress offers some rake tasks to create post and pages preloaded with metadata and according to Jekyll's naming conventions. It also generates a global and a category based feed for your posts (You can find them in `atom.xml` and `blog/categories/<category>/atom.xml`).
 
-## High-performance web best practices
-Computer shrine media realism warehouse-space nodal point. Urban face forwards sub-orbital geodesic realism drone sensory BASE jump alcohol 8-bit warehouse. Papier-mache shanty town ablative systemic uplink Shibuya render-farm garage pistol car into man vinyl. Gang tube alcohol woman warehouse silent courier assault hacker futurity carbon singularity. 
+If you are using zsh in the command line, then please add `alias rake=noglob` rake to your zsh config to prevent the `zsh: no matches` found error that occurs when running these rake tasks.
 
-{% codeblock Javascript Array Syntax lang:js %}
-var arr1 = new Array(arrayLength);
-var arr2 = new Array(element0, element1);
-{% endcodeblock %}
+## Blog Posts
 
-## Web optimization
-Dissident claymore mine pen convenience store office systema 8-bit hacker. Long-chain hydrocarbons Chiba sensory network assault wonton soup disposable. Table industrial grade human nodal point sub-orbital tank-traps smart-8-bit rifle claymore mine assassin. Tank-traps physical bridge warehouse monofilament network smart-engine jeans uplink alcohol apophenia saturation point sensory. Wristwatch film fluidity weathered sign refrigerator boat. Realism sign bicycle engine beef noodles free-market market concrete BASE jump. Apophenia warehouse smart-pistol jeans corrupted physical media range-rover rifle face forwards faded. Shibuya skyscraper garage receding Chiba paranoid 3D-printed tiger-team fluidity plastic shanty town physical. Beef noodles face forwards spook tiger-team network pen euro-pop wristwatch city sign boat construct A.I. concrete dead. 
+Blog posts must be stored in the `source/_posts` directory and named according to Jekyll's naming conventions: `YYYY-MM-DD-post-title.markdown`. The name of the file will be used as the url slug, and the date helps with file distinction and determines the sorting order for post loops.
+
+Octopress provides a rake task to create new blog posts with the right naming conventions, with sensible yaml metadata.
+
+### Syntax
+
+```
+rake new_post["title"]
+```
+The `new_post` command expects a naturally written title and strips out undesirable url characters when creating the filename. The default file extension for new posts is `markdown` but you can configure that in the `Rakefile`.
+
+Note: some command line interpreters, e.g. zsh, have a special meaning for `[` and `]` so you have to escape them or temporary switch to bash.
+
+### Example
+
+```
+rake new_post["Zombie Ninjas Attack: A survivor's retrospective"]
+# Creates source/_posts/2011-07-03-zombie-ninjas-attack-a-survivors-retrospective.markdown
+```
+The filename will determine your url. With the default permalink settings the url would be something like `http://site.com/blog/2011/07/03/zombie-ninjas-attack-a-survivors-retrospective/index.html`.
